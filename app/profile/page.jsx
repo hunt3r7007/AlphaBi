@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import Spinner from "../components/Spinner";
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const page = () => {
   const { user } = UserAuth();
@@ -23,12 +25,14 @@ const page = () => {
         <p>
           Welcome, {user.displayName} - you are logged in to the profile page -
           a protected route.
+          <App />
         </p>
       ) : (
-        <p>You must be logged in to view this page - protected route.</p>
+          <p className="w-full h-screen flex items-center justify-center">Login or Sign Up to see amazing Gifs!!</p>
       )}
+       
     </div>
+   
   );
 };
-
 export default page;
